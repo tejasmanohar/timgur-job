@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/tejasmanohar/timgur-scheduler",
   "dependencies": {
+    "node-schedule": "^0.1.13",
     "orchestrate": "^0.3.15"
   }
 }
