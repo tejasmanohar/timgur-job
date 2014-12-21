@@ -1,0 +1,26 @@
+{
+  "name": "timgur-scheduler",
+  "version": "1.0.0",
+  "description": "node.js background job for texting subscribers daily",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tejasmanohar/timgur-scheduler.git"
+  },
+  "keywords": [
+    "imgur",
+    "text",
+    "timgur",
+    "sms",
+    "twilio"
+  ],
+  "author": "Tejas Manohar <me@tejasmanohar.com> (https://tejas.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tejasmanohar/timgur-scheduler/issues"
+  },
+  "homepage": "https://github.com/tejasmanohar/timgur-scheduler"
+}
