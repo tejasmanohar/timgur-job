@@ -12,12 +12,7 @@ rule.minute = 0;
 db.list('subscribers')
   .then(function (result) {
     var data = result.body.results;
-    console.log(data);
-    for (var key in data) {
-      if (data.hasOwnProperty(key)) {
-        console.log(data[key].key);
-      }
-    }
+    data.forEach(function(obj) { console.log(obj.path.key); })
   })
   .fail(function (err) {
     console.log(err)
