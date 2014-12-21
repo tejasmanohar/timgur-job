@@ -1,4 +1,4 @@
-# timgur-background-job
+# timgur-scheduler
 
 node.js background job for texting subscribers daily
 
