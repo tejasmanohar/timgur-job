@@ -10,7 +10,7 @@ rule.hour = 14;
 rule.minute = 0;
 
 
-// Get Top Post of Day n Imgur
+// Get Top Post of Day from Imgur
 
 
 // Send MMS to Subscriber
