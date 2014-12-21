@@ -1,7 +1,7 @@
 // Require Modules
 var db = require('orchestrate')(process.env.API_KEY)
+var request = require('superagent');
 var schedule = require('node-schedule');
-
 
 // Setup Rule
 var rule = new schedule.RecurrenceRule();
