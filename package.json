@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/tejasmanohar/timgur-scheduler/issues"
   },
-  "homepage": "https://github.com/tejasmanohar/timgur-scheduler"
+  "homepage": "https://github.com/tejasmanohar/timgur-scheduler",
+  "dependencies": {
+    "orchestrate": "^0.3.15"
+  }
 }
