@@ -12,7 +12,7 @@ rule.hour = 14;
 rule.minute = 0;
 
 // Schedule Task
-var j = schedule.scheduleJob(date, function(){
+// var j = schedule.scheduleJob(date, function(){
   db.list('subscribers')
     .then(function (result) {
       var data = result.body.results;
@@ -21,7 +21,7 @@ var j = schedule.scheduleJob(date, function(){
     .fail(function (err) {
       console.log(err)
     })
-});
+// });
 
 
 // Get Top Post of Day from Imgur
