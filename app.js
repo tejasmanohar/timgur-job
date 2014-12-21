@@ -1,3 +1,9 @@
+// Log All Uncaught Exceptions
+process.on('uncaughtException', function(err) {
+  console.log(err);
+});
+
+
 // Require Modules
 var db = require('orchestrate')(process.env.ORCHESTRATE_API_KEY)
 var request = require('superagent');
@@ -11,8 +17,9 @@ rule.dayOfWeek = [0, new schedule.Range(0, 6)];
 rule.hour = 14;
 rule.minute = 0;
 
+
 // Schedule Task
-// var j = schedule.scheduleJob(date, function(){
+var j = schedule.scheduleJob(rule, function(){
   db.list('subscribers')
     .then(function (result) {
       var data = result.body.results;
@@ -21,7 +28,7 @@ rule.minute = 0;
     .fail(function (err) {
       console.log(err)
     })
-// });
+});
 
 
 // Get Top Post of Day from Imgur
