@@ -31,8 +31,12 @@ function getTopPost(cb) {
     .set('Authorization', 'Client-ID ' + process.env.IMGUR_CLIENT_ID)
     .set('Accept', 'application/json')
     .end(function(err, res) {
-      item = JSON.parse(res.text).data[0];
-      cb([item.title, item.link]);
+      if(err) {
+        console.log(err);
+      } else {
+        item = JSON.parse(res.text).data[0];
+        cb([item.title, item.link]);
+      }
     })
 }
 
@@ -50,5 +54,5 @@ function sendMMS(recipient) {
           console.error(err);
         }
     });
-  }
+  })
 }
