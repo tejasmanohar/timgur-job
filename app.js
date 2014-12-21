@@ -2,13 +2,21 @@
 var db = require('orchestrate')(process.env.API_KEY)
 var schedule = require('node-schedule');
 
+
 // Setup Rule
 var rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [0, new schedule.Range(0, 6)];
 rule.hour = 14;
 rule.minute = 0;
 
-// Loop Through Orchestrate Collection
+
+// Get Top Post of Day n Imgur
+
+
+// Send MMS to Subscriber
+
+
+// Loop through Orchestrate Collection
 db.list('subscribers')
   .then(function (result) {
     var data = result.body.results;
