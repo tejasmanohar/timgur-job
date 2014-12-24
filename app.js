@@ -11,14 +11,16 @@ var client = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILI
 
 
 // Iterate through Orchestrate Collection
-db.list('subscribers')
-  .then(function (result) {
-    var data = result.body.results;
-    data.forEach(function(obj) { sendMMS(obj.path.key); })
-  })
-  .fail(function (err) {
-    console.log(err)
-  })
+setInterval(function(){ 
+  db.list('subscribers')
+    .then(function (result) {
+      var data = result.body.results;
+      data.forEach(function(obj) { sendMMS(obj.path.key); })
+    })
+    .fail(function (err) {
+      console.log(err)
+    })
+}, 86400000);
 
 
 // Get Top Post of Day from Imgur
