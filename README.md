@@ -1,11 +1,6 @@
 # timgur-scheduler
 
-node.js background job for texting subscribers daily
-
-
-### why not [cron](http://linux.die.net/man/8/cron)?
-
-no heroku support
+node.js job for texting [timgur](http://timgur.net) subscribers daily
 
 
 ### where's the rest of the code?
