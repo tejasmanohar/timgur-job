@@ -7,28 +7,18 @@ process.on('uncaughtException', function(err) {
 // Require Modules
 var db = require('orchestrate')(process.env.ORCHESTRATE_API_KEY)
 var request = require('superagent');
-var schedule = require('node-schedule');
 var client = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
 
-// Setup Rule
-var rule = new schedule.RecurrenceRule();
-rule.dayOfWeek = [0, new schedule.Range(0, 6)];
-rule.hour = 14;
-rule.minute = 0;
-
-
-// Schedule Task
-var j = schedule.scheduleJob(rule, function(){
-  db.list('subscribers')
-    .then(function (result) {
-      var data = result.body.results;
-      data.forEach(function(obj) { sendMMS(obj.path.key); })
-    })
-    .fail(function (err) {
-      console.log(err)
-    })
-});
+// Iterate through Orchestrate Collection
+db.list('subscribers')
+  .then(function (result) {
+    var data = result.body.results;
+    data.forEach(function(obj) { sendMMS(obj.path.key); })
+  })
+  .fail(function (err) {
+    console.log(err)
+  })
 
 
 // Get Top Post of Day from Imgur

@@ -24,9 +24,8 @@
   },
   "homepage": "https://github.com/tejasmanohar/timgur-scheduler",
   "dependencies": {
-    "node-schedule": "^0.1.13",
-    "orchestrate": "^0.3.15",
-    "superagent": "^0.21.0",
-    "twilio": "^1.10.0"
+    "orchestrate": "0.3.15",
+    "superagent": "0.21.0",
+    "twilio": "1.10.0"
   }
 }
