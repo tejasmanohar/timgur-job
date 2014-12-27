@@ -53,25 +53,12 @@ app.get('/', function(req, res) {
 
 app.get('/daily', function(req, res) {
   res.sendStatus(200);
-  // db.list('subscribers')
-  //   .then(function (result) {
-  //     var data = result.body.results;
-  //     data.forEach(function(obj) { sendMMS(obj.path.key); })
-  //   })
-  //   .fail(function (err) {
-  //     console.log(err)
-  //   })
-  client.sendMessage({
-    to: '+1 214 436 1433',
-    body: 'test',
-    mediaUrl: 'http://www.joomlaworks.net/images/demos/galleries/abstract/7.jpg',
-    from: process.env.TWILIO_NUMBER
-  }, function(err, messageData) {
-      if (err) {
-        console.error(err);
-      } else {
-        console.log(messageData)
-        console.log('lelelelelele')
-      }
-  });
+  db.list('subscribers')
+    .then(function (result) {
+      var data = result.body.results;
+      data.forEach(function(obj) { sendMMS(obj.path.key); })
+    })
+    .fail(function (err) {
+      console.log(err)
+    })
 });
